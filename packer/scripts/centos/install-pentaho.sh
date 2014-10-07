@@ -55,7 +55,8 @@ echo "whoami="`whoami`
 echo "file="`sudo file $TMP_DOWNLOAD_FOLDER/pentaho.bin`
 
 # Install pentaho
-./pentaho.bin --optionfile $TMP_DOWNLOAD_FOLDER/option | tail -f /tmp/bitrock_installer.log > &1
+./pentaho.bin --optionfile $TMP_DOWNLOAD_FOLDER/option
+cat /tmp/bitrock_installer.log
 sudo rm -rf pentaho.bin
 cd /opt/Pentaho
 sudo chown $USER -R /opt/Pentaho
